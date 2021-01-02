@@ -10,14 +10,14 @@ script:
   - docker run -e CI=true themindset/react-test yarn test -- --coverage
 
 after_success:
-  - docker build -t themindest/multi-client ./client
+  - docker build -t themindset/multi-client ./client
   - docker build -t themindset/multi-nginx ./nginx
   - docker build -t themindset/multi-api ./server
   - docker build -t themindset/multi-worker ./worker
   # Log in the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER ID" --password-stdin
   # Push images to docker hub
-  - docker push themindest/multi-client
+  - docker push themindset/multi-client
   - docker push themindset/multi-nginx
   - docker push themindset/multi-api
   - docker push themindset/multi-worker
