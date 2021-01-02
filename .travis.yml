@@ -16,7 +16,7 @@ after_success:
   - docker build -t themindset/multi-worker ./worker
   - docker images
   # Log in the docker CLI
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER ID" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Push images to docker hub
   - docker push themindset/multi-client
   - docker push themindset/multi-nginx
